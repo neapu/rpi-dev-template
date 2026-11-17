@@ -1,0 +1,40 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 30,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "rpi-arm64",
+            "displayName": "Raspberry Pi ARM64 (Qt 6.11.3)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/../build-vscode",
+            "toolchainFile": "/opt/qt/6.11.3/lib/cmake/Qt6/qt.toolchain.cmake",
+            "hidden": true
+        },
+        {
+            "name": "rpi-arm64-debug",
+            "hidden": false,
+            "inherits": "rpi-arm64",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "rpi-arm64-release",
+            "hidden": false,
+            "inherits": "rpi-arm64",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "rpi-arm64",
+            "configurePreset": "rpi-arm64"
+        }
+    ]
+}

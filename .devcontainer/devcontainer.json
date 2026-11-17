@@ -1,0 +1,25 @@
+{
+    "name": "Raspberry Pi ARM64 Development",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "containerUser": "vscode",
+    "remoteUser": "vscode",
+    "updateRemoteUserUID": true,
+    "containerEnv": {
+        "PKG_CONFIG_LIBDIR": "/usr/lib/aarch64-linux-gnu/pkgconfig:/usr/share/pkgconfig"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cmake-tools",
+                "theqtcompany.qt-qml",
+                "theqtcompany.qt-core"
+            ],
+            "settings": {
+                "C_Cpp.default.compilerPath": "/usr/bin/aarch64-linux-gnu-g++"
+            }
+        }
+    }
+}
